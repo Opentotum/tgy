@@ -80,71 +80,71 @@
 ;
 ; The following only works with avra or avrasm2.
 ; For avrasm32, just comment out all but the include you need.
-#if defined(afro_esc)
-#include "afro.inc"		; AfroESC (ICP PWM, I2C, UART)
-#elif defined(afro2_esc)
-#include "afro2.inc"		; AfroESC 2 (ICP PWM, I2C, UART)
-#elif defined(afro_hv_esc)
-#include "afro_hv.inc"		; AfroESC HV with drivers (ICP PWM, I2C, UART)
-#elif defined(afro_nfet_esc)
-#include "afro_nfet.inc"	; AfroESC 3 with all nFETs (ICP PWM, I2C, UART)
-#elif defined(arctictiger_esc)
-#include "arctictiger.inc"	; Arctic Tiger 30A ESC with all nFETs (ICP PWM)
-#elif defined(birdie70a_esc)
-#include "birdie70a.inc"	; Birdie 70A with all nFETs (INT0 PWM)
-#elif defined(mkblctrl1_esc)
-#include "mkblctrl1.inc"	; MK BL-Ctrl v1.2 (ICP PWM, I2C, UART, high side PWM, sense hack)
-#elif defined(bs_esc)
-#include "bs.inc"		; HobbyKing BlueSeries / Mystery (INT0 PWM)
-#elif defined(bs_nfet_esc)
-#include "bs_nfet.inc"		; HobbyKing BlueSeries / Mystery with all nFETs (INT0 PWM)
-#elif defined(bs40a_esc)
-#include "bs40a.inc"		; HobbyKing BlueSeries / Mystery 40A (INT0 PWM)
-#elif defined(dlu40a_esc)
-#include "dlu40a.inc"		; Pulso Advance Plus 40A DLU40A inverted-PWM-opto (INT0 PWM)
-#elif defined(dlux_esc)
-#include "dlux.inc"		; HobbyKing Dlux Turnigy ESC 20A
-#elif defined(diy0_esc)
-#include "diy0.inc"		; HobbyKing DIY Open ESC (unreleased rev 0)
-#elif defined(dys_nfet_esc)
-#include "dys_nfet.inc"		; DYS 30A ESC with all nFETs (ICP PWM, I2C, UART)
-#elif defined(hk200a_esc)
-#include "hk200a.inc"		; HobbyKing SS Series 190-200A with all nFETs (INT0 PWM)
-#elif defined(hm135a_esc)
-#include "hm135a.inc"		; Hacker/Jeti Master 135-O-F5B 135A inverted-PWM-opto (INT0 PWM)
-#elif defined(kda_esc)
-#include "kda.inc"		; Keda Model 12A - 30A (INT0 PWM)
-#elif defined(maytech30a_esc)
-#include "maytech30a.inc"	; Maytech 30A and 20A with all nFETs (INT0 PWM)
-#elif defined(maytech40a_esc)
-#include "maytech40a.inc"	; Maytech 40A with all nFETs (INT0 PWM)
-#elif defined(maytech60a_esc)
-#include "maytech60a.inc"	; Maytech 60A with all nFETs (INT0 PWM)
-#elif defined(rb50a_esc)
-#include "rb50a.inc"		; Red Brick 50A with all nFETs (INT0 PWM)
-#elif defined(rb70a_esc)
-#include "rb70a.inc"		; Red Brick 70A with all nFETs (INT0 PWM)
-#elif defined(rct50a_esc)
+;#if defined(afro_esc)
+;#include "afro.inc"		; AfroESC (ICP PWM, I2C, UART)
+;#elif defined(afro2_esc)
+;#include "afro2.inc"		; AfroESC 2 (ICP PWM, I2C, UART)
+;#elif defined(afro_hv_esc)
+;#include "afro_hv.inc"		; AfroESC HV with drivers (ICP PWM, I2C, UART)
+;#elif defined(afro_nfet_esc)
+;#include "afro_nfet.inc"	; AfroESC 3 with all nFETs (ICP PWM, I2C, UART)
+;#elif defined(arctictiger_esc)
+;#include "arctictiger.inc"	; Arctic Tiger 30A ESC with all nFETs (ICP PWM)
+;#elif defined(birdie70a_esc)
+;#include "birdie70a.inc"	; Birdie 70A with all nFETs (INT0 PWM)
+;#elif defined(mkblctrl1_esc)
+;#include "mkblctrl1.inc"	; MK BL-Ctrl v1.2 (ICP PWM, I2C, UART, high side PWM, sense hack)
+;#elif defined(bs_esc)
+;#include "bs.inc"		; HobbyKing BlueSeries / Mystery (INT0 PWM)
+;#elif defined(bs_nfet_esc)
+;#include "bs_nfet.inc"		; HobbyKing BlueSeries / Mystery with all nFETs (INT0 PWM)
+;#elif defined(bs40a_esc)
+;#include "bs40a.inc"		; HobbyKing BlueSeries / Mystery 40A (INT0 PWM)
+;#elif defined(dlu40a_esc)
+;#include "dlu40a.inc"		; Pulso Advance Plus 40A DLU40A inverted-PWM-opto (INT0 PWM)
+;#elif defined(dlux_esc)
+;#include "dlux.inc"		; HobbyKing Dlux Turnigy ESC 20A
+;#elif defined(diy0_esc)
+;#include "diy0.inc"		; HobbyKing DIY Open ESC (unreleased rev 0)
+;#elif defined(dys_nfet_esc)
+;#include "dys_nfet.inc"		; DYS 30A ESC with all nFETs (ICP PWM, I2C, UART)
+;#elif defined(hk200a_esc)
+;#include "hk200a.inc"		; HobbyKing SS Series 190-200A with all nFETs (INT0 PWM)
+;#elif defined(hm135a_esc)
+;#include "hm135a.inc"		; Hacker/Jeti Master 135-O-F5B 135A inverted-PWM-opto (INT0 PWM)
+;#elif defined(kda_esc)
+;#include "kda.inc"		; Keda Model 12A - 30A (INT0 PWM)
+;#elif defined(maytech30a_esc)
+;#include "maytech30a.inc"	; Maytech 30A and 20A with all nFETs (INT0 PWM)
+;#elif defined(maytech40a_esc)
+;#include "maytech40a.inc"	; Maytech 40A with all nFETs (INT0 PWM)
+;#elif defined(maytech60a_esc)
+;#include "maytech60a.inc"	; Maytech 60A with all nFETs (INT0 PWM)
+;#elif defined(rb50a_esc)
+;#include "rb50a.inc"		; Red Brick 50A with all nFETs (INT0 PWM)
+;#elif defined(rb70a_esc)
+;#include "rb70a.inc"		; Red Brick 70A with all nFETs (INT0 PWM)
+;#elif defined(rct50a_esc)
 #include "rct50a.inc"		; RCTimer 50A (MLF version) with all nFETs (INT0 PWM)
-#elif defined(tbs_esc)
-#include "tbs.inc"		; TBS 30A ESC (Team BlackSheep) with all nFETs (ICP PWM, UART)
-#elif defined(tp_esc)
-#include "tp.inc"		; TowerPro 25A/HobbyKing 18A "type 1" (INT0 PWM)
-#elif defined(tp_8khz_esc)
-#include "tp_8khz.inc"		; TowerPro 25A/HobbyKing 18A "type 1" (INT0 PWM) at 8kHz PWM
-#elif defined(tp_i2c_esc)
-#include "tp_i2c.inc"		; TowerPro 25A/HobbyKing 18A "type 1" (I2C)
-#elif defined(tp_nfet_esc)
-#include "tp_nfet.inc"		; TowerPro 25A with all nFETs "type 3" (INT0 PWM)
-#elif defined(tp70a_esc)
-#include "tp70a.inc"		; TowerPro 70A with BL8003 FET drivers (INT0 PWM)
-#elif defined(tgy6a_esc)
-#include "tgy6a.inc"		; Turnigy Plush 6A (INT0 PWM)
-#elif defined(tgy_esc)
-#include "tgy.inc"		; TowerPro/Turnigy Basic/Plush "type 2" (INT0 PWM)
-#else
-#error "Unrecognized board type."
-#endif
+;#elif defined(tbs_esc)
+;#include "tbs.inc"		; TBS 30A ESC (Team BlackSheep) with all nFETs (ICP PWM, UART)
+;#elif defined(tp_esc)
+;#include "tp.inc"		; TowerPro 25A/HobbyKing 18A "type 1" (INT0 PWM)
+;#elif defined(tp_8khz_esc)
+;#include "tp_8khz.inc"		; TowerPro 25A/HobbyKing 18A "type 1" (INT0 PWM) at 8kHz PWM
+;#elif defined(tp_i2c_esc)
+;#include "tp_i2c.inc"		; TowerPro 25A/HobbyKing 18A "type 1" (I2C)
+;#elif defined(tp_nfet_esc)
+;#include "tp_nfet.inc"		; TowerPro 25A with all nFETs "type 3" (INT0 PWM)
+;#elif defined(tp70a_esc)
+;#include "tp70a.inc"		; TowerPro 70A with BL8003 FET drivers (INT0 PWM)
+;#elif defined(tgy6a_esc)
+;#include "tgy6a.inc"		; Turnigy Plush 6A (INT0 PWM)
+;#elif defined(tgy_esc)
+;#include "tgy.inc"		; TowerPro/Turnigy Basic/Plush "type 2" (INT0 PWM)
+;#else
+;#error "Unrecognized board type."
+;#endif
 
 .equ	CPU_MHZ		= F_CPU / 1000000
 
@@ -173,7 +173,7 @@
 .if !defined(MOTOR_REVERSE)
 .equ	MOTOR_REVERSE	= 0	; Reverse normal commutation direction
 .endif
-.equ	RC_PULS_REVERSE	= 0	; Enable RC-car style forward/reverse throttle
+.equ	RC_PULS_REVERSE	= 1	; Enable RC-car style forward/reverse throttle
 .equ	RC_CALIBRATION	= 1	; Support run-time calibration of min/max pulse lengths
 .equ	SLOW_THROTTLE	= 0	; Limit maximum throttle jump to try to prevent overcurrent
 .equ	BEACON		= 1	; Beep periodically when RC signal is lost
@@ -226,9 +226,9 @@
 .endif
 
 .equ	MAX_POWER	= (POWER_RANGE-1)
-.equ	PWR_COOL_START	= (POWER_RANGE/24) ; Power limit while starting to reduce heating
-.equ	PWR_MIN_START	= (POWER_RANGE/6) ; Power limit while starting (to start)
-.equ	PWR_MAX_START	= (POWER_RANGE/4) ; Power limit while starting (if still not running)
+.equ	PWR_COOL_START	= (POWER_RANGE/15) ; Power limit while starting to reduce heating
+.equ	PWR_MIN_START	= (POWER_RANGE/15) ; Power limit while starting (to start)
+.equ	PWR_MAX_START	= (POWER_RANGE/15) ; Power limit while starting (if still not running)
 .equ	PWR_MAX_RPM1	= (POWER_RANGE/4) ; Power limit when running slower than TIMING_RANGE1
 .equ	PWR_MAX_RPM2	= (POWER_RANGE/2) ; Power limit when running slower than TIMING_RANGE2
 
@@ -237,18 +237,26 @@
 .equ	LOW_BRAKE_POWER	= MAX_POWER*2/3
 .equ	LOW_BRAKE_SPEED	= 5
 
+;.equ	TIMING_MIN	= 0x8000 ; 8192us per commutation
+;.equ	TIMING_RANGE1	= 0x4000 ; 4096us per commutation
+;.equ	TIMING_RANGE2	= 0x2000 ; 2048us per commutation
+;.equ	TIMING_RANGE3	= 0x1000 ; 1024us per commutation
+;.equ	TIMING_MAX	= 0x00e0 ; 56us per commutation
+
 .equ	TIMING_MIN	= 0x8000 ; 8192us per commutation
 .equ	TIMING_RANGE1	= 0x4000 ; 4096us per commutation
 .equ	TIMING_RANGE2	= 0x2000 ; 2048us per commutation
 .equ	TIMING_RANGE3	= 0x1000 ; 1024us per commutation
 .equ	TIMING_MAX	= 0x00e0 ; 56us per commutation
 
-.equ	TIMEOUT_START	= 48000	; Timeout per commutation for ZC during starting
+;.equ	TIMEOUT_START	= 48000	; Timeout per commutation for ZC during starting
+.equ	TIMEOUT_START	= 2800	; Timeout per commutation for ZC during starting
 .if !defined(START_DELAY_US)
 .equ	START_DELAY_US	= 0	; Initial post-commutation wait during starting
 .endif
 .equ	START_DSTEP_US	= 8	; Microseconds per start delay step
-.equ	START_DELAY_INC	= 15	; Wait step count increase (wraps in a byte)
+;.equ	START_DELAY_INC	= 15	; Wait step count increase (wraps in a byte)
+.equ	START_DELAY_INC	= 7	; Wait step count increase (wraps in a byte)
 .equ	START_MOD_INC	= 4	; Start power modulation step count increase (wraps in a byte)
 .equ	START_MOD_LIMIT	= 48	; Value at which power is reduced to avoid overheating
 .equ	START_FAIL_INC	= 16	; start_tries step count increase (wraps in a byte, upon which we disarm)
@@ -3237,7 +3245,7 @@ wait_startup1:	rcall	set_ocr1a_rel
 		rcall	set_ocr1a_rel
 ; Powered startup: Use a fixed (long) ZC check count until goodies reaches
 ; ENOUGH_GOODIES and the STARTUP flag is cleared.
-		ldi	XL, 0xff * CPU_MHZ / 16
+		ldi	XL, 0x34 * CPU_MHZ / 16
 		rjmp	wait_for_edge1
 
 ;-----bko-----------------------------------------------------------------

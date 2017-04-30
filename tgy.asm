@@ -185,7 +185,7 @@
 .if !defined(MOTOR_REVERSE)
 .equ	MOTOR_REVERSE	= 0	; Reverse normal commutation direction
 .endif
-.equ	RC_PULS_REVERSE	= 0	; Enable RC-car style forward/reverse throttle
+.equ	RC_PULS_REVERSE	= 1	; Enable RC-car style forward/reverse throttle
 .equ	RC_CALIBRATION	= 1	; Support run-time calibration of min/max pulse lengths
 .equ	SLOW_THROTTLE	= 0	; Limit maximum throttle jump to try to prevent overcurrent
 .equ	BEACON		= 1	; Beep periodically when RC signal is lost
@@ -241,9 +241,9 @@
 .endif
 
 .equ	MAX_POWER	= (POWER_RANGE-1)
-.equ	PWR_COOL_START	= (POWER_RANGE/24) ; Power limit while starting to reduce heating
-.equ	PWR_MIN_START	= (POWER_RANGE/6) ; Power limit while starting (to start)
-.equ	PWR_MAX_START	= (POWER_RANGE/4) ; Power limit while starting (if still not running)
+.equ	PWR_COOL_START	= (POWER_RANGE/15) ; Power limit while starting to reduce heating
+.equ	PWR_MIN_START	= (POWER_RANGE/15) ; Power limit while starting (to start)
+.equ	PWR_MAX_START	= (POWER_RANGE/15) ; Power limit while starting (if still not running)
 .equ	PWR_MAX_RPM1	= (POWER_RANGE/4) ; Power limit when running slower than TIMING_RANGE1
 .equ	PWR_MAX_RPM2	= (POWER_RANGE/2) ; Power limit when running slower than TIMING_RANGE2
 
@@ -252,18 +252,26 @@
 .equ	LOW_BRAKE_POWER	= MAX_POWER*2/3
 .equ	LOW_BRAKE_SPEED	= 5
 
+;.equ	TIMING_MIN	= 0x8000 ; 8192us per commutation
+;.equ	TIMING_RANGE1	= 0x4000 ; 4096us per commutation
+;.equ	TIMING_RANGE2	= 0x2000 ; 2048us per commutation
+;.equ	TIMING_RANGE3	= 0x1000 ; 1024us per commutation
+;.equ	TIMING_MAX	= 0x00e0 ; 56us per commutation
+
 .equ	TIMING_MIN	= 0x8000 ; 8192us per commutation
 .equ	TIMING_RANGE1	= 0x4000 ; 4096us per commutation
 .equ	TIMING_RANGE2	= 0x2000 ; 2048us per commutation
 .equ	TIMING_RANGE3	= 0x1000 ; 1024us per commutation
 .equ	TIMING_MAX	= 0x0080 ; 32us per commutation (312,500eRPM)
 
-.equ	TIMEOUT_START	= 48000	; Timeout per commutation for ZC during starting
+;.equ	TIMEOUT_START	= 48000	; Timeout per commutation for ZC during starting
+.equ	TIMEOUT_START	= 2800	; Timeout per commutation for ZC during starting
 .if !defined(START_DELAY_US)
 .equ	START_DELAY_US	= 0	; Initial post-commutation wait during starting
 .endif
 .equ	START_DSTEP_US	= 8	; Microseconds per start delay step
-.equ	START_DELAY_INC	= 15	; Wait step count increase (wraps in a byte)
+;.equ	START_DELAY_INC	= 15	; Wait step count increase (wraps in a byte)
+.equ	START_DELAY_INC	= 7	; Wait step count increase (wraps in a byte)
 .equ	START_MOD_INC	= 4	; Start power modulation step count increase (wraps in a byte)
 .equ	START_MOD_LIMIT	= 48	; Value at which power is reduced to avoid overheating
 .equ	START_FAIL_INC	= 16	; start_tries step count increase (wraps in a byte, upon which we disarm)
@@ -4081,7 +4089,7 @@ wait_startup1:	rcall	set_ocr1a_rel
 		rcall	set_ocr1a_rel
 ; Powered startup: Use a fixed (long) ZC check count until goodies reaches
 ; ENOUGH_GOODIES and the STARTUP flag is cleared.
-		ldi	XL, 0xff * CPU_MHZ / 16
+		ldi	XL, 0x34 * CPU_MHZ / 16
 		rjmp	wait_for_edge1
 
 ;-----bko-----------------------------------------------------------------
